@@ -1,6 +1,7 @@
 # hrs
 
 > A Vue.js project
+#后台部分 https://github.com/Chen-xh/human_resource_system.git
 
 ## Build Setup
 
