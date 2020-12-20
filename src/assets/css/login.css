@@ -1,0 +1,67 @@
+.login_container {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  /*background-image: linear-gradient(-180deg, #1a1454 0%, #0e81a5 100%);*/
+  background: url("/static/images/Starry.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.el-form {
+  padding: 32px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login_box {
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -225px 0 0 -175px;
+  box-shadow: 0 0 2px 2px #979696;
+  /*background: #fff;*/
+  background: linear-gradient(
+    230deg,
+    rgba(53, 57, 74, 0) 30%,
+    rgb(35, 34, 34) 100%
+  );
+}
+.el-form {
+  padding: 32px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input_l {
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+
+}
+
+.submitBtn {
+  width: 80%;
+  /*color: #fff;*/
+  /*background: #ff813d;*/
+  color: #39f;
+  background-color: transparent;
+  height: 40px;
+  font-size: 15px;
+}
+.logo_img{
+  width: 100px;
+  height: 100px;
+  border-radius: 200px;
+}
+
+
