@@ -1,8 +1,9 @@
 import axios from 'axios'
 import qs from 'qs'
 
-export let serverUrl = "http://118.178.125.139:9090";
-// export let serverUrl = "http://localhost:9090";
+// export let serverUrl = "http://118.178.125.139:9090";
+export let serverUrl = "http://localhost:9090";
+
 export let baseUrl = "http://localhost:8080";
 // export let baseUrl = "http://118.178.125.139:9091";
 let config = {
@@ -40,7 +41,7 @@ export const updateRecord = function (form, file) {
   }
   fd.delete("salaryStandard");
   if (file == null) {
-    fd.append('file', new Blob(), "");
+    fd.append('file', new Blob(), "");t
   } else {
     fd.append('file', file, file.name);
   }

@@ -84,7 +84,7 @@
       :with-header="false"
       size="30%">
       <div>
-        <el-image class="logo_img" :src="logoUrl" ></el-image>
+        <el-image class="logo_img" :src="logoUrl"></el-image>
         <h5>您好！{{ username }}</h5>
         <el-divider></el-divider>
         <div>
@@ -92,7 +92,7 @@
           <span style="color: #666666">{{ username }}</span>
         </div>
         <div>
-          <span >角色:</span>
+          <span>角色:</span>
           <span style="color: #666666">{{ role }}</span>
         </div>
       </div>
@@ -110,25 +110,63 @@ export default {
     return {
       token: localStorage.getItem("token"),
       username: localStorage.getItem("username"),
-      role:localStorage.getItem("roles"),
+      role: localStorage.getItem("roles"),
       logoUrl: '/static/images/logo.png',
       baseUrl: baseUrl,
       item: this.baseUrl + "/#/home",
       drawer: false,
     }
   },
+  mounted() {
+    this.checkLogin();
+  },
   methods: {
-    to(path){
-      this.item = this.baseUrl + "/#/"+path;
+    checkLogin() {
+      if (this.token == null) {
+        alert("请先登录！")
+        this.$router.push({
+          path: '/',
+        });
+      }
+    },
+    to(path) {
+      this.item = this.baseUrl + "/#/" + path;
     },
 
     recordM(i) {
-
-      this.item = this.baseUrl + "/#/record" + i;
+      let b = false;
+      switch (i) {
+        case 1:
+          if (this.role.indexOf("人事专员") >= 0) b = true;
+          break;
+        case 2:
+          if (this.role.indexOf("人事经理") >= 0) b = true;
+          break;
+        case 3:
+          if (this.role.indexOf("人事专员") >= 0) b = true;
+          break;
+        case 4:
+          if (this.role.indexOf("人事经理") >= 0) b = true;
+          break;
+      }
+      if (b) {
+        this.item = this.baseUrl + "/#/record" + i;
+      } else {
+        alert("你没有权限!");
+      }
     },
     salaryM(i) {
-      this.item = this.baseUrl + "/#/salary" + i;
+      let b = false;
+
+      if (this.role.indexOf("薪酬专员") >= 0 || this.role.indexOf("薪酬经理") >= 0) b = true;
+
+      if (b) {
+        this.item = this.baseUrl + "/#/salary" + i;
+      } else {
+        alert("你没有权限!");
+      }
     },
+
     exit() {
       localStorage.removeItem("token");
       localStorage.removeItem("username");
@@ -138,15 +176,10 @@ export default {
         params: {}
       });
     },
-    userMsg(done){
-      this.$confirm('还有未保存的工作哦确定关闭吗？')
-        .then(_ => {
-          done();
-        })
-        .catch(_ => {});
-    }
 
-  },
+
+  }
+  ,
 
 }
 </script>
