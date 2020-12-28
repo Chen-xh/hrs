@@ -33,6 +33,10 @@
                   <i class="el-icon-s-management"></i>
                   <span style="font-weight: 700;">系统管理模块</span>
                 </template>
+                <el-menu-item-group>
+                  <el-menu-item index="4-1" @click="to('system1')">系统设置</el-menu-item>
+
+                </el-menu-item-group>
               </el-submenu>
               <el-submenu index="1">
                 <template slot="title">

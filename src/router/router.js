@@ -23,6 +23,7 @@ import salary_details3 from "../components/salary_details3";
 import indexMain from "../components/home";
 import home from "../components/home";
 import userMessage from "../components/userMessage";
+import system1 from "../components/system1";
 
 Vue.use(Router)
 
@@ -132,6 +133,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home
+    },
+    {
+      path: '/system1',
+      name: 'system1',
+      component: system1
     },
     {
       path: '/userMessage',

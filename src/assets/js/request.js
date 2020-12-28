@@ -83,6 +83,9 @@ export const getSalaryListNoCheck = () =>
   axios.get(serverUrl + "/admin/salaryList/findAllNoCheck");
 export const getSalaryListChecked = () =>
   axios.get(serverUrl + "/admin/salaryList/findAllChecked");
+export const getOrganization23 = () =>
+  axios.get(serverUrl + "/admin/organization/getAll23");
+
 
 export const selectRecord = function (lo1, lo2, lo3, po1, po2, time) {
   let fd = new FormData()
